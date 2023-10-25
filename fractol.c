@@ -6,7 +6,7 @@
 /*   By: mabbadi <mabbadi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:35:03 by mabbadi           #+#    #+#             */
-/*   Updated: 2023/10/24 17:57:47 by mabbadi          ###   ########.fr       */
+/*   Updated: 2023/10/25 15:43:22 by mabbadi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,12 @@ int	main(int argc, char **argv)
 {
 	t_fractal	*fractal;
 
-	if (argc < 2 || argc > 4)
+	if (argc < 2 || argc > 4 || ((argc != 2) && (ft_strncmp(argv[1],
+					"mandelbrot", 10) == 0)))
 	{
-		ft_putendl_fd("Available fractals: mandelbrot, julia", 1);
+		ft_putendl_fd("Available fractals: mandelbrot or julia", 1);
+		ft_putendl_fd("mandelbrot with no args", 1);
+		ft_putendl_fd("julia with 2 args type double", 1);
 		return (0);
 	}
 	fractal = malloc(sizeof(t_fractal));
